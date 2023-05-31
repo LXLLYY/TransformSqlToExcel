@@ -36,7 +36,7 @@ public class TableCellStyleHandler implements CellWriteHandler {
         CellStyle cellHeadStyle = getCellHeadStyle(workbook);
 
         switch (stringCellValue) {
-            // if your data
+            // if your have some column comment call "a",must change table head to other name
             case "字段说明":
                 Row row = cell.getRow();
                 int rowIndex = cell.getRowIndex();

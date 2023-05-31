@@ -147,7 +147,6 @@ public class TransformExcelServiceImpl implements TransformExcelService {
         String fileName = System.getProperty("user.home") + "\\Desktop\\" + this.databaseName + "_数据库表.xlsx";
 
         try (ExcelWriter excelWriter = EasyExcel.write(fileName, DBTable.class).registerWriteHandler(new TableCellStyleHandler()).registerWriteHandler(new TableSheetStyleHandler()).build()) {
-            // 把sheet设置为不需要头 不然会输出sheet的头 这样看起来第一个table 就有2个头了
             WriteSheet writeSheet = EasyExcel.writerSheet(this.databaseName).needHead(Boolean.FALSE).build();
 
             Set<Map.Entry<String, List<DBTable>>> tableColumnEntry = tableColumnMap.entrySet();
